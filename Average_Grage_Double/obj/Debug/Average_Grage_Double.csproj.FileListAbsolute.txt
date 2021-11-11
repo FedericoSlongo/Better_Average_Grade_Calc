@@ -1,8 +1,0 @@
-C:\Users\feder\source\repos\Average_Grage_Double\Average_Grage_Double\bin\Debug\Average_Grage_Double.exe.config
-C:\Users\feder\source\repos\Average_Grage_Double\Average_Grage_Double\bin\Debug\Average_Grage_Double.exe
-C:\Users\feder\source\repos\Average_Grage_Double\Average_Grage_Double\bin\Debug\Average_Grage_Double.pdb
-C:\Users\feder\source\repos\Average_Grage_Double\Average_Grage_Double\obj\Debug\Average_Grage_Double.csproj.AssemblyReference.cache
-C:\Users\feder\source\repos\Average_Grage_Double\Average_Grage_Double\obj\Debug\Average_Grage_Double.csproj.SuggestedBindingRedirects.cache
-C:\Users\feder\source\repos\Average_Grage_Double\Average_Grage_Double\obj\Debug\Average_Grage_Double.csproj.CoreCompileInputs.cache
-C:\Users\feder\source\repos\Average_Grage_Double\Average_Grage_Double\obj\Debug\Average_Grage_Double.exe
-C:\Users\feder\source\repos\Average_Grage_Double\Average_Grage_Double\obj\Debug\Average_Grage_Double.pdb
