@@ -42,7 +42,7 @@ namespace Average_Grage_Calc
                 {
                     min++;
                 }
-                voto_temp = voto_temp + voto;
+                voto_temp += voto;
                 if (voto == 0)
                 {
                     Console.Clear();
@@ -61,7 +61,7 @@ namespace Average_Grage_Calc
                     }
                 }
                 ciclo++;
-            } while (!(voto == 0));
+            } while (voto != 0);
             Console.ReadKey();
         }
     }
