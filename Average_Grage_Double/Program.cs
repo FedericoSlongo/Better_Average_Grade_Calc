@@ -4,84 +4,52 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Average_Grage_Calc
+namespace Average_Grade_Duble_clstr
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            int ciclo = 0, max = 0, min = 0;
-            double voto, voto_temp = 0, voto_finale, x;
-            string voto_;
-            bool error = false;
+            string voto_temp = "";
+            int ciclo = 0;
+            double voto = 0, media = 0;
+            double[] voto_finale = new double[100];
+
+            //Aggiunta dei numeri
             do
             {
-                Ri_Lettura:
-                Console.WriteLine("Inserire il voto ");
-                do
+                Console.Write("Inserisci il voto: ");
+                voto_temp = Console.ReadLine().ToLower();
+                if (voto_temp == "0")
                 {
-                    if (error)
-                    {
-                        Console.WriteLine("Il tuo voto non è valido reinserire un voto valido");
-                    }
-                    //Lettura del voto
-                    voto_ = Console.ReadLine().ToLower();
-
-                    //Controllo se vuole eliminare il numero precedente
-                    if (voto_ == "prec" || voto_ == "precedente")   {
-                        if (ciclo == 0)
-                        {
-                            Console.WriteLine("Non hai ancora inserito numeri");
-                            goto Ri_Lettura;
-                        }
-                        Console.WriteLine("Cancellazione del numero precedente completata!");
-                        ciclo--;
-                        goto Ri_Lettura;
-                    }
-
-                    //Controllo se il voto è un numero valido corretto
-                    error = !double.TryParse(voto_, out voto);
-                    if (voto < 0)
-                    {
-                        Console.WriteLine("Il voto è minore di zero");
-                        error = true;
-                    }
-                    if (voto > 10)
-                    {
-                        Console.WriteLine("Il voto è più grande di dieci");
-                        error = true;
-                    }
-                } while (error);
-                //Controllo se il voto è sufficente
-                if (voto >= 6)
-                {
-                    max++;
+                    break;
                 }
-                //Controllo se il voto è insufficente
-                if (voto < 6 && voto > 0)
+                if (voto_temp == "prec" || voto_temp == "precedente")
                 {
-                    min++;
+                    Console.WriteLine("Il numero precedente è stato eliminato");
+                    ciclo -= 2;
+                } else if (!double.TryParse(voto_temp, out voto))
+                {
+                    Console.WriteLine("Numero inserito non valido");
+                    ciclo--;
                 }
-                voto_temp = voto_temp + voto;
-                if (voto == 0)
+                else
                 {
-                    Console.Clear();
-                    voto_finale = voto_temp / ciclo;
-                    Console.WriteLine($"Hai inserito {ciclo} voti");
-                    Console.WriteLine($"La media è {voto_finale}, hai presso {min} insufficenti e {max} sufficenti");
-                    if (voto_finale >= 6)
-                    {
-                        Console.WriteLine($"{voto_finale} è sufficente :D");
-                    }
-                    if (voto_finale < 6 && voto_finale > 0)
-                    {
-                        Console.Write($"{voto_finale} è insufficente :/, per recuperare devi prendere ");
-                        x = 6 * (ciclo + 1) - voto_finale;
-                        Console.WriteLine(x);
-                    }
+                    voto_finale[ciclo] = voto;
                 }
                 ciclo++;
-            } while (!(voto == 0));
+            } while (true);
+
+            //Calcolo media temporale
+            for (int i = 0; i < 100; i++)
+            {
+                media += voto_finale[i];
+            }
+            //Pulisco la console
+            Console.Clear();
+            //Stampa media con calcolo finale
+            Console.WriteLine($"La media è {media / ciclo}");
+
             Console.ReadKey();
         }
     }
