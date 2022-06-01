@@ -24,18 +24,25 @@ namespace Average_Grade_Duble_clstr
                 {
                     break;
                 }
+                //Eliminazione del numero precedente
                 if (voto_temp == "prec" || voto_temp == "precedente")
                 {
                     Console.WriteLine("Il numero precedente è stato eliminato");
                     ciclo -= 2;
-                } else if (!double.TryParse(voto_temp, out voto))
+                } else if (!double.TryParse(voto_temp, out voto)) // Converto il numero
                 {
-                    Console.WriteLine("Numero inserito non valido");
-                    ciclo--;
                 }
                 else
                 {
-                    voto_finale[ciclo] = voto;
+                    //Controllo se il numero è tra 0 e 10
+                    if (voto < 0 || voto > 10)
+                    {
+                        Console.WriteLine("Il numero inserito non è valido");
+                    }
+                    else
+                    {
+                        voto_finale[ciclo] = voto;
+                    }
                 }
                 ciclo++;
             } while (true);
