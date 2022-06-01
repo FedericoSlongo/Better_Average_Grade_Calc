@@ -34,6 +34,14 @@ namespace Average_Grade_Duble_clstr
                 }
                 else
                 {
+                    for (int i = 0; i < 4; i++)
+                    {
+                        voto_temp = $"{voto_temp}000";
+                        if (voto_temp[i] == '.')
+                        {
+                            Console.WriteLine("Il programma non supporta il . usa la ,");
+                        }
+                    }
                     //Controllo se il numero è tra 0 e 10
                     if (voto < 0 || voto > 10)
                     {
